@@ -1,0 +1,16 @@
+name: workflow-artifacts
+on: 
+  push
+env:
+  FILE-NAME: 
+
+jobs:
+  artifact:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 
+        uses: actions/checkout@v2
+        run: 
+      - name:
+        run:
