@@ -2,15 +2,20 @@ name: workflow-artifacts
 on: 
   push
 env:
-  FILE-NAME: 
+  ARTIFACT_NAME: myartifact 
 
 jobs:
-  artifact:
+  main:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 
+      - name: Check out the code
         uses: actions/checkout@v2
-        run: 
-      - name:
-        run:
+        #run: 
+      - name: Upload the artifact
+        run:  actions/upload-artifact@v2.2.4
+        with:
+          - name: ${{ env.ARTIFACT_NAME }}
+            path: .
+        
+      
