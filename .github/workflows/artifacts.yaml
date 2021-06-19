@@ -1,6 +1,6 @@
 name: workflow-artifacts
 on: 
-  push
+  [push]
 env:
   ARTIFACT_NAME: myartifact 
 
@@ -11,9 +11,8 @@ jobs:
     steps:
       - name: Check out the code
         uses: actions/checkout@v2
-        #run: 
       - name: Upload the artifact
-        run:  actions/upload-artifact@v2.2.4
+        uses:  actions/upload-artifact@v2.2.4
         with:
           - name: ${{ env.ARTIFACT_NAME }}
             path: .
